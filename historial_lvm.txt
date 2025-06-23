@@ -1,0 +1,44 @@
+    1  fdisk
+    2  sudo fdisk -l
+    3  sudo fdisk /dev/sdd
+    4  free -h
+    5  sudo mkswap /dev/sdd1
+    6  free -h
+    7  sudo swapon /dev/sdd1
+    8  free -h
+    9  swapon -s
+   10  cat /proc/swaps
+   11  sudo fdisk /dev/sdc
+   12  sudo wipefs -a /dev/sdc1
+   13  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   14  sudo pvs
+   15  sudo vgcreate vg_datos /dev/sdc1 /dev/sdd2
+   16  sudo vgs
+   17  sudo pvs
+   18  sudo vgcreate vg_web /dev/sdc2
+   19  sudo pvs
+   20  sudo lvcreate -L 1G vg_web -n lv_web1
+   21  sudo lvcreate -L 512M vg_web -n lv_web2
+   22  sudo lvcreate -L 512M vg_web -n lv_web3
+   23  sudo lvs
+   24  sudo pvs
+   25  sudo fdisk -l
+   26  sudo mkfs.ext4 /dev/mepper/vg_web-lv_web1
+   27  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   28  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   29  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   30  ls -l
+   31  sd carpeta_compartida/
+   32  ls -l
+   33  ls -l .ssh/
+   34  ssh-keygen -t ed25519
+   35  ls -l .ssh/
+   36  sudo systemctl status sshd
+   37  cat .ssh/id_ed25519.pub
+   38  git clone git@github.com:NavarroN23/TP2_Navarro_Nahuel.git
+   39  ls -l
+   40  cd TP2_Navarro_Nahuel/
+   41  sudo pvs > pvs.txt
+   42  sudo vgs > vgs.txt
+   43  sudo lvs > lvs.txt
+   44  history > historial_lvm.txt
